@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>玉音放送</title>
+    <style>
+        .spin {
+            display: block;
+            margin: 20px auto;
+            width: 30%;
+            animation: spinner 1500ms linear infinite;
+        }
+
+        @keyframes spinner {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body style="background-image: url(avatar.jpg); background-size: 60px 60px;">
+    <div style="text-align: center; max-height: 100%;" id="main">
+        <div
+            style="display: inline-block; width: 100%; max-width: 500px; min-width: 320px; background-color: white; padding-top: 40px; padding-bottom: 40px; border-radius: 30px;">
+            <img class="spin" src="avatar.jpg"
+                style="max-width: 200px; border-radius: 114514px; background: linear-gradient(180deg, red, orange, yellow, green, cyan, blue, purple); padding: 10px;">
+            <h2>玉音放送</h2>
+            <audio controls autoplay>
+                <source src="voice.wav" type="audio/wav">
+                <p>Your browser doesn't support HTML5 audio. Here is
+                    a <a href="voice.wav">link to the audio</a> instead.</p>
+            </audio>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script>
+        // dirty impl
+        $(function () {
+            $(window).trigger('resize');
+        });
+
+        $(window).resize(function () {
+            if ($(window).width() >= 320) {
+                let empty_space = $(window).height() - $('#main').height();
+                let margin_top = Math.floor(empty_space * 0.4);
+                $('#main').css('margin-top', margin_top);
+            } else {
+                $('#main').css('margin-top', 0);
+            }
+        });
+    </script>
+</body>
+
+</html>
