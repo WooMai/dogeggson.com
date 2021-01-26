@@ -24,7 +24,7 @@
             display: block;
             margin: 20px auto;
             width: 30%;
-            animation: spinner 1500ms linear infinite;
+            animation: spinner 500ms linear infinite;
         }
 
         @keyframes spinner {
@@ -46,7 +46,7 @@
             <img class="spin" src="avatar.jpg"
                 style="max-width: 200px; border-radius: 114514px; background: linear-gradient(180deg, red, orange, yellow, green, cyan, blue, purple); padding: 10px;">
             <h2>玉音放送</h2>
-            <audio controls autoplay>
+            <audio controls autoplay loop id="voice">
                 <source src="voice.ogg" type="audio/ogg">
                 <source src="voice.wav" type="audio/wav">
                 <p>Your browser doesn't support HTML5 audio. Here is
@@ -71,6 +71,10 @@
             } else {
                 $('#main').css('margin-top', 0);
             }
+        });
+
+        $(window).click(function () {
+            $('#voice').trigger("play");
         });
     </script>
 
