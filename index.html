@@ -42,7 +42,7 @@
 <body style="background-image: url(avatar.jpg); background-size: 60px 60px;">
     <div style="text-align: center; max-height: 100%;" id="main">
         <div
-            style="display: inline-block; width: 100%; max-width: 500px; min-width: 320px; background-color: white; padding-top: 40px; padding-bottom: 40px; border-radius: 30px;">
+            style="display: inline-block; width: 100%; max-width: 500px; min-width: 320px; background-color: white; padding-top: 40px; padding-bottom: 30px; border-radius: 30px;">
             <img class="spin" src="avatar.jpg"
                 style="max-width: 200px; border-radius: 114514px; background: linear-gradient(180deg, red, orange, yellow, green, cyan, blue, purple); padding: 10px;">
             <h2>玉音放送</h2>
@@ -51,6 +51,12 @@
                 <p>Your browser doesn't support HTML5 audio. Here is
                     a <a href="voice.wav">link to the audio</a> instead.</p>
             </audio>
+
+            <div style="margin-top: 20px;">
+                <!-- Place this tag where you want the button to render. -->
+                <a class="github-button" href="https://github.com/WooMai/dogeggson.com" data-size="large"
+                    data-show-count="true" aria-label="Star WooMai/dogeggson.com on GitHub">Star</a>
+            </div>
         </div>
     </div>
 
@@ -76,6 +82,9 @@
             $('#voice').trigger("play");
         });
     </script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-H42Y40N3H5"></script>
